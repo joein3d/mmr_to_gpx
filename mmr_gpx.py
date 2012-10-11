@@ -6,8 +6,8 @@ import time
 from datetime import datetime, date, time, timedelta
 import sys
 
-import_file_path = '/Users/Joe/Downloads/187533531.json'
-output_file_path = '/Users/Joe/Downloads/187533531.gpx'
+import_file_path = 'PUT_YOUR_INPUT_FILE_PATH_HERE'
+output_file_path = 'PUT_YOUR_OUTPUT_FILE_PATH_HERE'
 
 file_data = open(import_file_path).read()
 json_dictionary = json.loads(file_data)
