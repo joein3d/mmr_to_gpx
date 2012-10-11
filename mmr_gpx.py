@@ -8,6 +8,11 @@ import time
 from datetime import datetime, date, time, timedelta
 import sys
 import os
+import glib
+
+downloads_dir = glib.get_user_special_dir(glib.USER_DIRECTORY_DOWNLOAD)
+
+print downloads_dir
 
 parser = argparse.ArgumentParser()
 parser.add_argument('path_to_json_file')
