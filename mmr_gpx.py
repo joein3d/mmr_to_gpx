@@ -1,13 +1,22 @@
 #!/usr/bin/env python
 
+
+import argparse
 import json
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 import time 
 from datetime import datetime, date, time, timedelta
 import sys
+import os
 
-import_file_path = 'PUT_YOUR_INPUT_FILE_PATH_HERE'
-output_file_path = 'PUT_YOUR_OUTPUT_FILE_PATH_HERE'
+parser = argparse.ArgumentParser()
+parser.add_argument('path_to_json_file')
+args = parser.parse_args()
+
+import_file_path = args.path_to_json_file
+import_file_name = os.path.splitext(os.path.basename(import_file_path))[0]
+import_file_dir = os.path.dirname(import_file_path)
+output_file_path = os.path.join(import_file_dir, import_file_name + '.gpx')
 
 file_data = open(import_file_path).read()
 json_dictionary = json.loads(file_data)
